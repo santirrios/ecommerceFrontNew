@@ -1,0 +1,50 @@
+<div class="container p-5">
+    <h2>Actualizar producto</h2>
+    <form [formGroup]="updateProduct">
+        <div class="input-group my-3">
+            <span class="input-group-text">Nombre</span>
+            <input type="text" name="name" class="form-control" formControlName="name">
+        </div>
+    
+        <div class="input-group my-3">
+            <span class="input-group-text">Categoria</span>
+            <mat-form-field appearance="fill">
+                <mat-label>Select a category</mat-label>
+                <mat-select formControlName="categoryId">
+                    <mat-option *ngFor="let category of categories" [value]="category.categoryId">
+                        {{category.name}}
+                    </mat-option>
+                </mat-select>
+              </mat-form-field>
+        </div>
+    
+        <div class="input-group my-3">
+            <span class="input-group-text">Descripcion</span>
+            <input type="text" name="description" class="form-control" formControlName="description">
+        </div>
+    
+        <div class="input-group my-3">
+            <span class="input-group-text">Precio</span>
+            <input type="number" name="price" class="form-control" formControlName="price">
+            <span class="input-group-text">$</span>
+        </div>
+    
+        <div class="my-4">
+            <button type="button" class="btn btn-secondary mx-1" (click)="decreaseImage()">Borrar
+                imagen</button>
+            <button type="button" class="btn btn-primary mx-1" (click)="incrementImage()">Agregar
+                imagen</button>
+        </div>
+        <label for="images" class="form-label text-center">Imagenes URL</label>
+        <div class="row justify-content-center" formArrayName="URLS">
+            <div class="col-6 my-1" *ngFor="let image of controls; let i = index">
+                <input class="form-control" type="url" name="images_{{i}}" [formControlName]="i" />
+            </div>
+        </div>
+    
+    
+        <button mat-raised-button color="primary" (click)="sendData()" type="submit"
+            [disabled]="updateProduct.invalid">Update Product</button>
+            <button mat-raised-button color="warn" type="button" (click)="closeDialog()" class="mx-3">Salir</button>
+    </form>
+</div>

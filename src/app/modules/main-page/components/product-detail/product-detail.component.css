@@ -1,0 +1,69 @@
+img{
+    display: inline-block;
+    border-radius: 25px;
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+}
+.products--grid{
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+}
+.div-i1{
+    position: relative;
+    border-radius: 15px;
+    cursor: pointer;
+    
+}
+.div-i1:hover{
+    filter: brightness(150%);
+    transition: 0.5s;
+    
+}
+.div-i2:hover{
+    filter: brightness(150%);
+    transition: 0.5s;
+    
+}
+.div-i2{
+    position: relative;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.div-i2 i{
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0 0 0 -15px;
+
+}
+.div-i1 i{
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0 0 0 -12px;
+
+}
+
+.div-circle{
+    display: inline-block;
+    justify-content: center;
+    
+}
+.div-circle i{
+    color: black;
+    margin-left: 5px;
+    
+}
+.div-up-circle{
+    margin-left: 50%;
+}
+#circle-else{
+    font-size: 18px;
+}
+.div-circle i{
+    cursor: pointer;
+}

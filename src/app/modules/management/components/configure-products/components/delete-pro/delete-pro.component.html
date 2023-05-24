@@ -1,0 +1,11 @@
+<div class="text-center">
+    <form>
+        <h2>Borrar un producto</h2>
+        <label for="id" class="form-label">ID</label>
+        <br>
+        <input type="text" name="id" class="form-input" [(ngModel)]="id" required>
+        <br>
+
+        <button class="btn btn-warning" (click)="deleteProduct()">Borrar</button>
+    </form>
+</div>

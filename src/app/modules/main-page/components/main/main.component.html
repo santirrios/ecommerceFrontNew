@@ -1,0 +1,13 @@
+<div class="products--grid">
+    <div *ngIf="recivedProduct">
+        El nombre del producto desde el hijo es:
+        <strong>{{recivedProduct.name}}</strong>
+        <hr>
+        <button mat-raised-button color="warn" (click)="recivedProduct = undefined">Borrar</button>
+    </div>
+    <a *ngFor="let product of products">
+        <app-product [product]="product" (productoEmitido)="manejoEvento($event)"></app-product>
+    </a>
+</div>
+
+

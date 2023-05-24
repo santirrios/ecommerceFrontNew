@@ -1,0 +1,27 @@
+<div class="text-center container my-3">
+    <form (ngSubmit)="sendLogup()" [formGroup]="formLogup">
+        <h2>Registrarse</h2>
+        <div class="input-group my-3">
+            <span class="input-group-text">Email</span>
+            <input type="email" name="name" class="form-control" formControlName="email" required>
+        </div>
+        <div class="input-group my-3">
+            <span class="input-group-text">Password</span>
+            <input type="password" name="password" class="form-control" formControlName="password" required>
+        </div>
+        <div class="input-group my-3">
+            <span class="input-group-text">First name</span>
+            <input type="text" name="fname" class="form-control" formControlName="firstName" required>
+        </div>
+        <div class="input-group my-3">
+            <span class="input-group-text">Last name</span>
+            <input type="text" name="lname" class="form-control" formControlName="lastName" required>
+        </div>
+        <hr>
+        <button mat-raised-button color="primary" type="submit" [disabled]="formLogup.invalid">Registrase</button>
+        <p>Do you have an account? login <a routerLink="">here</a></p>
+        <div *ngIf="errorSesion">
+            Ocurrio un error:{{errorMessage}}
+        </div>
+    </form>
+</div>

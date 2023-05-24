@@ -1,0 +1,39 @@
+<div class="justify-content-center align-items-center text-center my-5 container">
+    <div>
+        <h1>Tu cuenta</h1>
+    </div>
+    <div>
+        <img src="https://cdn-icons-png.flaticon.com/512/6073/6073873.png" width="10%" alt="foto usuario">
+    </div>
+    <form (ngSubmit)="updateUser()" [formGroup]="formUser">
+        <h2>Actualizar usuario</h2>
+        <div class="input-group my-3">
+            <span class="input-group-text">Email</span>
+            <input type="email" name="name" class="form-control" formControlName="email" required>
+        </div>
+        <div class="input-group my-3">
+            <span class="input-group-text">Password</span>
+            <input [type]="tipoInput" name="password" class="form-control" formControlName="password" required>
+            <span class="input-group-text" id="ver-password" (click)="verContrasena()"><i
+                    class="fa-sharp fa-regular fa-eye"></i></span>
+        </div>
+        <div class="input-group my-3">
+            <span class="input-group-text">First name</span>
+            <input type="text" name="fname" class="form-control" formControlName="firstName" required>
+        </div>
+        <div class="input-group my-3">
+            <span class="input-group-text">Last name</span>
+            <input type="text" name="lname" class="form-control" formControlName="lastName" required>
+        </div>
+        <mat-form-field class="input-group my-3">
+            <mat-label>Rol</mat-label>
+            <mat-select formControlName="rol">
+                <mat-option value="admin">Admin</mat-option>
+                <mat-option value="user">User</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" class="mx-3" [disabled]="formUser.invalid">Actualizar
+            cuenta</button>
+    </form>
+
+</div>

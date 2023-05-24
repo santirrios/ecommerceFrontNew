@@ -1,0 +1,36 @@
+<div *ngIf="product!=null;else elseBlock">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="products--grid">
+                <div (click)="previousPicture()" class="div-i1">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
+                <div>
+                    <img [src]="product.images[contadorImagenes].url" alt="image">
+                    <div class="div-up-circle">
+                        <div class="div-circle" *ngFor="let n of arrayCantidadImages;let i = index" >
+                            <i (click)="clickCircle(i)" *ngIf="contadorImagenes!=i;else elseBlockCircle" class="fa-regular fa-circle"></i>
+                        </div>
+                    </div>
+                    <ng-template #elseBlockCircle>
+                        <i class="fa-solid fa-circle" id="circle-else"></i>
+                    </ng-template>
+                </div>
+                <div (click)="nextPicture()" class="div-i2">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <h1>{{product.name}}</h1>
+            <h2>{{product.price | currency:'USD'}}</h2>
+            <h3>{{category}}</h3>
+            <h3>{{product.description}}</h3>
+            <button class="btn btn-primary" (click)="addToCart()">Añadir al carrito</button>
+        </div>
+
+    </div>
+</div>
+<ng-template #elseBlock>
+    <h1 class="text-center">product not found</h1>
+</ng-template>

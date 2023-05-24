@@ -1,0 +1,6 @@
+<a [routerLink]="['/product',product.productId]">
+    <img [src]="product.images[0].url" alt="imagen">
+    <h2 class="text-center">{{product.name}}</h2>
+    <h2 class="text-center">{{product.price | currency:'USD'}}</h2>
+</a>
+<button mat-raised-button color="primary" (click)="emitirProducto()">Emitir producto</button>

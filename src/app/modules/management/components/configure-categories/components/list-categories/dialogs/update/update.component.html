@@ -1,0 +1,18 @@
+<div class="container p-5">
+    <h2>Actualizar</h2>
+    <form (ngSubmit)="updateCategory()" [formGroup]="formCategory">
+        <div class="input-group my-3">
+            <span class="input-group-text">Nombre</span>
+            <input type="text" name="name" formControlName="name" class="form-control" required>
+        </div>
+    
+        <div class="input-group my-3">
+            <span class="input-group-text">Descripcion</span>
+            <input type="text" name="deescription" formControlName="description" class="form-control" required>
+        </div>
+    
+        <button mat-raised-button color="primary" type="submit" class="mx-3" [disabled]="formCategory.invalid">Actualizar categoria</button>
+        <button mat-raised-button color="warn" type="button" (click)="closeDialog()" class="mx-3">Salir</button>
+    </form>
+    
+</div>

@@ -1,0 +1,13 @@
+<div class="container" *ngIf="categories != null; else thereAreNoCategories">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-4">
+            <app-add-pro></app-add-pro>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-8">
+            <app-list-pro></app-list-pro>
+        </div>
+    </div>
+</div>
+<ng-template #thereAreNoCategories>
+    <h1>there are no categories yet</h1>
+</ng-template>

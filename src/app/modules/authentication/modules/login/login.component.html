@@ -1,0 +1,19 @@
+<div class="text-center container my-3">
+    <form (ngSubmit)="sendLogin()" [formGroup]="formLogin">
+        <h2>Iniciar sesion</h2>
+        <div class="input-group my-3">
+            <span class="input-group-text">Email</span>
+            <input type="email" name="name" class="form-control" formControlName="email" required>
+        </div>
+        <hr>
+        <div class="input-group my-3">
+            <span class="input-group-text">Password</span>
+            <input type="password" name="category" class="form-control" formControlName="password" required>
+        </div>
+        <button mat-raised-button color="primary" type="submit" [disabled]="formLogin.invalid">Iniciar sesion</button>
+        <p>You don't have an account? Register <a routerLink="logup">here</a></p>
+        <div *ngIf="errorSesion">
+            Ocurrio un error:{{errorMessage}}
+        </div>
+    </form>
+</div>

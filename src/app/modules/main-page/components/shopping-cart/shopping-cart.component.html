@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <div class="row" *ngIf="products.length>0; else elseBlock">
+        <div class="col-md-8">
+            <ul class="list-group">
+                <li *ngFor="let product of products" class="list-group-item">
+                    <a  [routerLink]="['/product',product.productId]">
+                        <div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img [src]="product.images[0].url" alt="carImage">
+                                </div>
+                                <div class="col-sm-6">
+                                    <h2>{{product.name}}</h2>
+                                    <h3>{{product.price|currency}}</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h1>total:{{total|currency}}</h1>
+        </div>
+    </div>
+</div>
+<ng-template #elseBlock>
+    <div>
+        <h1 class="text-center mt-5">No products here yet</h1>
+    </div>
+</ng-template>

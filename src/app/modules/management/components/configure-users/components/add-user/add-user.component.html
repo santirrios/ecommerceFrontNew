@@ -1,0 +1,35 @@
+<div class="text-center my-3">
+    <form (ngSubmit)="sendLogup()" [formGroup]="formLogup">
+        <h2>Crear usuario</h2>
+        <div class="input-group my-3">
+            <span class="input-group-text">Email</span>
+            <input type="email" name="name" class="form-control" formControlName="email" required>
+        </div>
+        <div class="input-group my-3">
+            <span class="input-group-text">Password</span>
+            <input type="password" name="password" class="form-control" formControlName="password" required>
+        </div>
+        <div class="input-group my-3">
+            <span class="input-group-text">First name</span>
+            <input type="text" name="fname" class="form-control" formControlName="firstName" required>
+        </div>
+        <div class="input-group my-3">
+            <span class="input-group-text">Last name</span>
+            <input type="text" name="lname" class="form-control" formControlName="lastName" required>
+        </div>
+
+        <mat-form-field>
+            <mat-label>Seleccione una opción</mat-label>
+            <mat-select formControlName="rol">
+              <mat-option value="admin">Admin</mat-option>
+              <mat-option value="user">User</mat-option>
+            </mat-select>
+          </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" type="submit" [disabled]="formLogup.invalid">Crear cuenta</button>
+        <div *ngIf="errorSesion">
+            Ocurrio un error:{{errorMessage}}
+        </div>
+    </form>
+</div>
+<hr>

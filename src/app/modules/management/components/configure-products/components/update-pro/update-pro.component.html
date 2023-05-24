@@ -1,0 +1,46 @@
+<div class="text-center">
+    <form>
+        <h2>Actualizar un producto</h2>
+
+        <label for="id" class="form-label">Id a actualizar</label>
+        <br>
+        <input type="text" name="id" class="form-input" [(ngModel)]="id" required>
+        <br>
+
+        <label for="name" class="form-label">Nuevo nombre</label>
+        <br>
+        <input type="text" name="name" class="form-input" [(ngModel)]="product.name" required>
+        <br>
+    
+        <label for="category" class="form-label">Nueva categoria</label>
+        <br>
+        <input type="text" name="category" class="form-input" [(ngModel)]="product.category" required>
+        <br>
+    
+        <label for="description" class="form-label">Nueva descripcion</label>
+        <br>
+        <input type="text" name="description" class="form-input" [(ngModel)]="product.description" required>
+        <br>
+    
+        <label for="price" class="form-label">Nuevo precio</label>
+        <br>
+        <input type="number" name="price" class="form-input" [(ngModel)]="product.price" required>
+        <br>
+    
+        <label for="number-images" class="form-label">Cantidad de imagenes "ENTRE 1 Y 10"</label>
+        <br>
+        <input type="number" name="number-images" class="form-input" (change)="cambioNumero()" [(ngModel)]="cantidadImagenes" min="1" max="10" required>
+        <br>
+        
+        <label for="images" class="form-label">Nuevas imagenes URL</label>
+        <br>
+        <div *ngFor="let imagen of cantidad" >
+            <input type="url" name="images" [(ngModel)]="product.images[imagen]" required>
+        </div>
+        <br>
+
+        <button type="submit" class="btn btn-primary" (click)="updateData()">Actualizar</button>
+        
+    
+    </form>
+</div>

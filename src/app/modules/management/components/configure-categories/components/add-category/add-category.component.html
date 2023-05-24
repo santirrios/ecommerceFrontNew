@@ -1,0 +1,14 @@
+<h2>Agregar categoria</h2>
+<form (ngSubmit)="sendCategory()" [formGroup]="formCategory">
+    <div class="input-group my-3">
+        <span class="input-group-text">Nombre</span>
+        <input type="text" name="name" formControlName="name" class="form-control" required>
+    </div>
+
+    <div class="input-group my-3">
+        <span class="input-group-text">Descripcion</span>
+        <input type="text" name="deescription" formControlName="description" class="form-control" required>
+    </div>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="formCategory.invalid">Crear categoria</button>
+</form>
